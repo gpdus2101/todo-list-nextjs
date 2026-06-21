@@ -1,0 +1,90 @@
+.todo-input-wrap {
+  display: flex;
+  gap: 16px;
+}
+
+.todo-input {
+  position: relative;
+  width: 1011.94px;
+  height: 52.5px;
+  background: var(--slate-100);
+  border: 2px solid var(--slate-900);
+  border-radius: 24px;
+  margin-right: 4.06px;
+  margin-bottom: 3.5px;
+  flex: 1;
+}
+
+.todo-input::before {
+  content: '';
+  position: absolute;
+  top: 1.5px;
+  left: 2.06px;
+  width: calc(100% + 4px);
+  height: 52.5px;
+  border-radius: 24px;
+  background: var(--slate-900);
+  z-index: -1;
+}
+
+.todo-input input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.todo-add-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 164.35px;
+  height: 52px;
+  flex: 0 0 168px;
+  border-radius: 24px;
+  background: var(--slate-200);
+  border: 2px solid var(--slate-900);
+  margin-right: 3.65px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.todo-add-btn::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 1.65px;
+  width: calc(100% + 4px);
+  height: 52px;
+  border-radius: 24px;
+  background: var(--slate-900);
+  z-index: -1;
+}
+
+.todo-add-btn .ic-plus {
+  width: 16px;
+  height: 16px;
+  background: url(/images/ic-plus.svg) center / 100% auto no-repeat;
+}
+
+/* Tablet */
+@media screen and (max-width: 1199px) {
+  .todo-add-btn {
+    flex: 0 0 162px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 743px) {
+  .todo-add-btn {
+    flex: 0 0 56px;
+    font-size: 0;
+    margin-right: 1.22px;
+  }
+
+  .todo-add-btn::before {
+    left: -0.78px;
+  }
+}

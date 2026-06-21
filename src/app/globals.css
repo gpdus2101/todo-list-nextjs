@@ -1,38 +1,29 @@
+@charset "utf-8";
 @import "tailwindcss";
 
+/* variable ----------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --slate-900: #0F172A;
-  --violet-600: #7C3AED;
   --slate-800: #1E293B;
-  --violet-100: #EDE9FE;
   --slate-500: #64748B;
   --slate-400: #94A3B8;
-  --rose-500: #F43F5E;
   --slate-300: #CBD5E1;
-  --lime-300: #BEF264;
   --slate-200: #E2E8F0;
   --slate-100: #F1F5F9;
+  --violet-600: #7C3AED;
+  --violet-100: #EDE9FE;
+  --rose-500: #F43F5E;
+  --lime-300: #BEF264;
   --amber-800: #92400E;
+  --bg-white: #FFFFFF;
+  --bg-main: #F9FAFB;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* fonts ----------- */
 @font-face {
   font-family: "NanumSquare";
-  src: url("/fonts/NanumSquareR.ttf") format("truetype");
-  font-weight: 400;
+  src: url("/fonts/NanumSquareEB.ttf") format("truetype");
+  font-weight: 800;
 }
 
 @font-face {
@@ -41,8 +32,79 @@
   font-weight: 700;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@font-face {
   font-family: "NanumSquare";
+  src: url("/fonts/NanumSquareR.ttf") format("truetype");
+  font-weight: 400;
+}
+
+/* reset ----------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "NanumSquare";
+  font-size: 16px;
+  color: var(--slate-900);
+  background: var(--bg-main);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+[class$='-btn'] {
+  cursor: pointer;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+/* Tablet */
+@media screen and (max-width: 1199px) {
+  .inner {
+    max-width: 100%;
+    padding: 24px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 743px) {
+  .inner {
+    max-width: 100%;
+    padding: 16px;
+  }
 }

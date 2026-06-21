@@ -1,24 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
-    title: "Todo List",
-    description: "Todo List",
+  title: "Todo List",
+  description: "Todo List",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="ko" className={`h-full antialiased`}>
-            <body className="min-h-full flex flex-col">
-                <header>
-                    <img src="/images/logo.svg" />
-                </header>
-                {children}
-            </body>
-        </html>
-    );
+  return (
+    <html lang="ko">
+      <body>
+        <Header />
+        {children}
+      </body>
+    </html>
+  );
 }
