@@ -27,10 +27,16 @@
     width: 32px;
     height: 32px;
     background: url(/images/ic-ckeckbox.svg) center / 100% auto no-repeat;
+    cursor: pointer;
 }
 
 .todo-item-text[data-type='done'] .todo-item-label {
     background-image: url(/images/ic-checkbox-checked.svg);
+}
+
+.todo-item-text input {
+    display: inline-block;
+    max-width: 80%;
 }
 
 .detail-content {
@@ -46,6 +52,12 @@
     background: var(--slate-50) url(/images/img.svg) center / 53.95px auto no-repeat;
     border-radius: 24px;
     overflow: hidden;
+}
+
+.todo-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .todo-item-img :is(.plus-btn, .edit-btn) {

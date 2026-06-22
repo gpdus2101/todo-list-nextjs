@@ -1,24 +1,13 @@
-"use client";
-
 import TodoInput from "@/components/TodoInput/TodoInput";
 import TodoItem from "@/components/TodoItem/TodoItem";
+import { getTodos } from "@/api/todo";
 import styles from "./page.module.css";
 
-const todoList = [
-  { id: 1, text: "공부하기", isDone: false },
-  { id: 2, text: "운동하기", isDone: false },
-];
+export default async function Home() {
+  const todos = await getTodos();
+  const todoList = todos.filter(item => !item.isCompleted);
+  const doneList = todos.filter(item => item.isCompleted);
 
-const doneList = [
-  { id: 3, text: "밥 먹기", isDone: true },
-  { id: 4, text: "과제하기", isDone: true },
-];
-
-// 임시 함수
-const handleToggle = (id: number) => {};
-const handleDelete = (id: number) => {};
-
-export default function Home() {
   return (
     <main className={styles["main-page"]}>
       <div className="inner">
@@ -31,7 +20,12 @@ export default function Home() {
             </div>
             {todoList.length ? (
               todoList.map(item => (
-                <TodoItem key={item.id} id={item.id} text={item.text} isDone={item.isDone} onToggle={handleToggle} />
+                <TodoItem
+                  key={item.id}
+                  id={item.id}
+                  text={item.name}
+                  isDone={item.isCompleted}
+                />
               ))
             ) : (
               <div className={styles["empty-todo"]}>
@@ -53,7 +47,12 @@ export default function Home() {
             </div>
             {doneList.length ? (
               doneList.map(item => (
-                <TodoItem key={item.id} id={item.id} text={item.text} isDone={item.isDone} onToggle={handleToggle} />
+                <TodoItem
+                  key={item.id}
+                  id={item.id}
+                  text={item.name}
+                  isDone={item.isCompleted}
+                />
               ))
             ) : (
               <div className={styles["empty-done"]}>
