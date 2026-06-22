@@ -43,7 +43,7 @@ export default function TodoDetailEditor({ todo }: Props) {
   };
 
   // 이미지 업로드
-  const handleFileChange = async e => {
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -80,7 +80,7 @@ export default function TodoDetailEditor({ todo }: Props) {
       imageUrl = res.url;
     }
 
-    await updateTodo(todo.id, {
+    await updateTodo(String(todo.id), {
       name,
       memo,
       isCompleted,
@@ -97,7 +97,7 @@ export default function TodoDetailEditor({ todo }: Props) {
 
     if (!ok) return;
 
-    await deleteTodo(todo.id);
+    await deleteTodo(String(todo.id));
 
     alert("삭제되었습니다.");
     router.push("/");
