@@ -1,0 +1,35 @@
+.memo-input-wrap {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: text;
+}
+
+.memo-input-wrap textarea {
+    width: 100%;
+    min-height: 1.2em;
+    max-height: 13.2em;
+    height: auto;
+    text-align: center;
+    line-height: 1.2;
+    resize: none;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.memo-input-wrap textarea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.memo-input-wrap textarea::-webkit-scrollbar-thumb {
+    background-color: var(--amber-200);
+    border-radius: 3px;
+}
+
+/* Tablet */
+@media screen and (max-width: 1199px) {}
+
+/* Mobile */
+@media screen and (max-width: 743px) {}

@@ -10,10 +10,13 @@
   --slate-300: #CBD5E1;
   --slate-200: #E2E8F0;
   --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
   --violet-600: #7C3AED;
+  --violet-200: #DDD6FE;
   --violet-100: #EDE9FE;
   --rose-500: #F43F5E;
   --lime-300: #BEF264;
+  --amber-200: #FDE68A;
   --amber-800: #92400E;
   --bg-white: #FFFFFF;
   --bg-main: #F9FAFB;
@@ -46,6 +49,9 @@ html {
 }
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: "NanumSquare";
   font-size: 16px;
   color: var(--slate-900);
@@ -85,6 +91,10 @@ img {
 button,
 [class$='-btn'] {
   cursor: pointer;
+}
+
+main {
+  flex: 1;
 }
 
 .inner {

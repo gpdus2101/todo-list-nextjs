@@ -20,60 +20,55 @@ const handleDelete = (id: number) => {};
 
 export default function Home() {
   return (
-    <main className={`${styles.main} inner`}>
-      <TodoInput />
+    <main className={styles["main-page"]}>
+      <div className="inner">
+        <TodoInput />
 
-      <div className={styles["list-wrap"]}>
-        <section>
-          <div className={styles["tit-todo"]}>
-            <img src="/images/todo.svg" alt="to do" />
-          </div>
-          {todoList.length ? (
-            todoList.map(item => (
-              <TodoItem key={item.id} id={item.id} text={item.text} isDone={item.isDone} onToggle={handleToggle} />
-            ))
-          ) : (
-            <div className={styles["empty-todo"]}>
-              <div className={styles["empty-img-box"]}>
-                <img src="/images/empty-todo.svg" alt="" />
-              </div>
-              <p>
-                할 일이 없어요.
-                <br />
-                TODO를 새롭게 추가해주세요!
-              </p>
+        <div className={styles["list-wrap"]}>
+          <section>
+            <div className={styles["tit-todo"]}>
+              <img src="/images/todo.svg" alt="to do" />
             </div>
-          )}
-        </section>
+            {todoList.length ? (
+              todoList.map(item => (
+                <TodoItem key={item.id} id={item.id} text={item.text} isDone={item.isDone} onToggle={handleToggle} />
+              ))
+            ) : (
+              <div className={styles["empty-todo"]}>
+                <div className={styles["empty-img-box"]}>
+                  <img src="/images/empty-todo.svg" alt="" />
+                </div>
+                <p>
+                  할 일이 없어요.
+                  <br />
+                  TODO를 새롭게 추가해주세요!
+                </p>
+              </div>
+            )}
+          </section>
 
-        <section>
-          <div className={styles["tit-done"]}>
-            <img src="/images/done.svg" alt="done" />
-          </div>
-          {doneList.length ? (
-            doneList.map(item => (
-              <TodoItem
-                key={item.id}
-                id={item.id}
-                text={item.text}
-                isDone={item.isDone}
-                onToggle={handleToggle}
-                onDelete={handleDelete}
-              />
-            ))
-          ) : (
-            <div className={styles["empty-done"]}>
-              <div className={styles["empty-img-box"]}>
-                <img src="/images/empty-done.svg" alt="" />
-              </div>
-              <p>
-                아직 다 한 일이 없어요.
-                <br />
-                해야 할 일을 체크해보세요!
-              </p>
+          <section>
+            <div className={styles["tit-done"]}>
+              <img src="/images/done.svg" alt="done" />
             </div>
-          )}
-        </section>
+            {doneList.length ? (
+              doneList.map(item => (
+                <TodoItem key={item.id} id={item.id} text={item.text} isDone={item.isDone} onToggle={handleToggle} />
+              ))
+            ) : (
+              <div className={styles["empty-done"]}>
+                <div className={styles["empty-img-box"]}>
+                  <img src="/images/empty-done.svg" alt="" />
+                </div>
+                <p>
+                  아직 다 한 일이 없어요.
+                  <br />
+                  해야 할 일을 체크해보세요!
+                </p>
+              </div>
+            )}
+          </section>
+        </div>
       </div>
     </main>
   );
