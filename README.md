@@ -76,6 +76,7 @@ npm run dev
 
 ## 프로젝트 구조
 
+```text
 src/
 ├─ app/ # 페이지 라우팅 (Next.js App Router)
 │ ├─ page.tsx # Todo 리스트
@@ -91,6 +92,7 @@ src/
 │ └─ todo.ts
 │
 ├─ styles/ # 전역 스타일
+```
 
 ---
 
